@@ -16,7 +16,7 @@
   --cream:#F3EFE7;
   --paper:#F8F5EF;
   --ink:#1E211C;
-  --grey:#7A766E;
+  --grey:#66625A;
   --grey-d:#B4AFA4;
   --line:#DDD7CC;
   --line-d:rgba(243,239,231,.18);
@@ -58,8 +58,8 @@ section{padding-block:clamp(88px,10vw,150px)}
 /* chapter label: 01 — Our philosophy */
 .chap{display:flex;align-items:center;gap:14px;margin-bottom:26px}
 .chap .no{font-family:var(--serif);font-size:20px;line-height:1}
-.chap .ln{width:28px;height:1px;background:currentColor;opacity:.5}
-.chap .caps{opacity:.8}
+.chap .ln{width:28px;height:1px;background:currentColor;opacity:.6}
+.chap .caps{opacity:.92}
 
 /* text link with arrow */
 .tl{display:inline-flex;align-items:center;gap:12px;padding-bottom:6px;border-bottom:1px solid currentColor;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;transition:gap .6s var(--ease)}
@@ -111,9 +111,12 @@ section{padding-block:clamp(88px,10vw,150px)}
 .hero .bg{position:absolute;inset:-14% 0 0 0;will-change:transform}
 .hero .bg img{width:100%;height:100%;object-fit:cover;animation:heroin 3.4s var(--ease) 1.2s both}
 @keyframes heroin{from{transform:scale(1.1)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,16,11,.5) 0%,rgba(12,16,11,.16) 40%,rgba(12,16,11,0) 62%),linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,0) 26%,rgba(0,0,0,0) 62%,rgba(0,0,0,.34))}
-.hero .topo{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.55;-webkit-mask-image:radial-gradient(circle at var(--mx,72%) var(--my,58%),#000 0,#000 var(--r,0%),transparent calc(var(--r,0%) + 18%));mask-image:radial-gradient(circle at var(--mx,72%) var(--my,58%),#000 0,#000 var(--r,0%),transparent calc(var(--r,0%) + 18%))}
-.hero .ctag{position:absolute;z-index:2;right:max(56px,env(safe-area-inset-right,0px));top:118px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 62% 70% at 18% 52%,rgba(10,14,9,.62) 0%,rgba(10,14,9,.34) 48%,rgba(10,14,9,0) 78%),linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,0) 24%,rgba(0,0,0,0) 60%,rgba(0,0,0,.42))}
+@media (max-width:700px){.hero::after{background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.22) 30%,rgba(8,12,8,.45) 60%,rgba(8,12,8,.72) 100%)}}
+.hero .copy{text-shadow:0 1px 2px rgba(0,0,0,.18),0 4px 30px rgba(0,0,0,.28)}
+.hero .chap .caps,.hero .chap .no{opacity:1}.hero .chap .ln{opacity:.8}
+.hero .topo{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.42;-webkit-mask-image:radial-gradient(circle at var(--mx,72%) var(--my,58%),#000 0,#000 var(--r,0%),transparent calc(var(--r,0%) + 18%));mask-image:radial-gradient(circle at var(--mx,72%) var(--my,58%),#000 0,#000 var(--r,0%),transparent calc(var(--r,0%) + 18%))}
+.hero .ctag{position:absolute;z-index:2;right:max(56px,env(safe-area-inset-right,0px));top:118px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#fff;padding:5px 9px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(0,0,0,.18);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 @media (max-width:900px){.hero .ctag{right:var(--gutr)}}
 .hero .wrap{position:relative;z-index:1;height:100%;display:grid;grid-template-rows:1fr auto;padding-top:120px;padding-bottom:clamp(36px,6vh,64px)}
 .hero .copy{align-self:center;max-width:640px;display:grid;gap:28px}
@@ -123,7 +126,7 @@ section{padding-block:clamp(88px,10vw,150px)}
 .hero .mask:nth-child(2)>span{animation-delay:1.85s}
 .hero .copy{position:relative;z-index:2}.hero .foot{position:relative;z-index:2}
 @keyframes rise{from{transform:translateY(108%)}to{transform:none}}
-.hero .sub{font-size:clamp(16px,1.4vw,19px);font-weight:300;max-width:38ch;opacity:0;animation:fadein 1.2s var(--ease) 2.2s forwards}
+.hero .sub{font-size:clamp(16px,1.4vw,19px);font-weight:400;max-width:38ch;color:#fff;opacity:0;animation:fadein 1.2s var(--ease) 2.2s forwards}
 .hero .chap{opacity:0;animation:fadein 1.2s var(--ease) 1.6s forwards}
 .hero .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;opacity:0;animation:fadein 1.2s var(--ease) 2.5s forwards}
 .scrollcue{display:flex;align-items:center;gap:16px}
@@ -142,7 +145,7 @@ section{padding-block:clamp(88px,10vw,150px)}
 @media (max-width:900px){.phil-top .d2,.phil-top .side{grid-column:1 / -1}}
 .lfl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:72px;position:relative}
 .lfl .card{position:relative;aspect-ratio:4/3.3;color:#fff;overflow:hidden}
-.lfl .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.55))}
+.lfl .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66))}
 .lfl .meta{position:absolute;z-index:1;left:22px;right:22px;bottom:20px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:12px}
 .lfl .meta .no{font-family:var(--serif);font-size:16px}
 .lfl .meta b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(26px,2.6vw,36px);letter-spacing:.04em;line-height:1.05;margin-top:6px}
@@ -161,7 +164,7 @@ section{padding-block:clamp(88px,10vw,150px)}
 @media (max-width:900px){.eco-top .d2,.eco-top .side{grid-column:1 / -1}}
 .ecos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:56px}
 .eco{position:relative;aspect-ratio:3/3.7;color:#fff;overflow:hidden;border:0;padding:0;background:#222;cursor:pointer;text-align:left}
-.eco::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.6));transition:background .6s}
+.eco::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 34%,rgba(0,0,0,.7));transition:background .6s}
 .eco .meta{position:absolute;z-index:1;left:20px;right:20px;bottom:20px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:10px}
 .eco .no{font-family:var(--serif);font-size:15px}
 .eco b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.3vw,32px);letter-spacing:.05em;line-height:1.05;margin-top:4px}
@@ -207,7 +210,7 @@ section{padding-block:clamp(88px,10vw,150px)}
 .stack>div{display:grid;gap:12px;align-content:start}
 .stack ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px}
 .stack li{transition:opacity .5s}
-.stack:hover li{opacity:.45}.stack li:hover{opacity:1}
+.stack:hover li{opacity:.55}.stack li:hover{opacity:1}
 .stack li b{display:block;font-weight:300;font-size:16px}
 .stack li span{color:var(--grey-d)}
 @media (max-width:900px){.wgrid{grid-template-columns:1fr}.wgrid .settle{aspect-ratio:16/10}}
@@ -241,7 +244,7 @@ section{padding-block:clamp(88px,10vw,150px)}
 .proc-top .tl{grid-column:11 / span 2;justify-self:end}
 @media (max-width:900px){.proc-top .d2,.proc-top p,.proc-top .tl{grid-column:1 / -1;justify-self:start}}
 .steps{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0}
-.steps li{display:grid;gap:8px;align-content:start;padding-right:18px;position:relative;opacity:.35;transition:opacity .8s var(--ease)}
+.steps li{display:grid;gap:8px;align-content:start;padding-right:18px;position:relative;opacity:.5;transition:opacity .8s var(--ease)}
 .steps li.on{opacity:1}
 .steps .top{display:flex;align-items:center;gap:10px}
 .steps .no{font-family:var(--serif);font-size:20px}
@@ -279,7 +282,7 @@ section{padding-block:clamp(88px,10vw,150px)}
 .closing{position:relative;color:#fff;overflow:hidden;padding-block:clamp(120px,16vw,220px) clamp(48px,6vw,72px);background:#1a1e18}
 .closing .bg{position:absolute;inset:-10% 0;will-change:transform}
 .closing .bg img{width:100%;height:100%;object-fit:cover}
-.closing::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,10,.55),rgba(10,14,10,.15) 60%),linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.45))}
+.closing::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,10,.66),rgba(10,14,10,.22) 62%),linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.5))}
 .closing .wrap{position:relative;z-index:1}
 .cl-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
 .cl-row .copy{grid-column:1 / span 7;display:grid;gap:30px;justify-items:start}
@@ -312,6 +315,35 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 footer img{width:118px}
 footer nav{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
 footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-d)}
+
+/* Illustration system: one stroke weight, round ends, draws itself in */
+.ill{display:block;overflow:visible}
+.ill *{fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.ill .f{fill:currentColor;stroke:none}
+.ill .acc{stroke:var(--copper)}
+.ill .soft{opacity:.45}
+.dr :is(path,circle,rect,line,polyline,ellipse):not(.f){stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease-io);transition-delay:var(--d,0s)}
+.dr.in :is(path,circle,rect,line,polyline,ellipse):not(.f){stroke-dashoffset:0}
+.dr .f{opacity:0;transition:opacity .8s var(--ease) calc(var(--d,0s) + 1s)}
+.dr.in .f{opacity:1}
+.ico{width:30px;height:30px;flex:none}
+.ico *{stroke-width:1.35}
+.section-ill svg *{stroke-width:1.1}
+.pill-ill *{stroke-width:1.2}
+/* landscape section */
+.section-ill{margin-top:56px;color:var(--ink)}
+.section-ill svg{width:100%;height:auto}
+.section-ill .labels{display:grid;grid-template-columns:repeat(3,1fr);margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.section-ill .labels span:nth-child(2){text-align:center}.section-ill .labels span:nth-child(3){text-align:right}
+/* panel illustration */
+.pill-ill{width:200px;max-width:60%;color:var(--ink);margin-bottom:4px}
+/* step + wellness + model icons */
+.steps .ico{color:var(--ink);margin-bottom:6px}
+.stack .gh{display:flex;align-items:center;gap:12px}
+.stack .ico{color:var(--copper)}
+.models div{flex-direction:column;align-items:center;gap:14px}
+.models .ico{color:var(--ink);width:34px;height:34px}
+@media (prefers-reduced-motion:reduce){.dr :is(path,circle,rect,line,polyline,ellipse):not(.f){stroke-dashoffset:0}.dr .f{opacity:1}}
 
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
@@ -403,6 +435,7 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
 
     <div class="panel" id="p-stay" role="tabpanel" aria-labelledby="t-stay">
       <div class="ptxt">
+        <svg class="ill pill-ill dr" viewBox="0 0 160 90" aria-hidden="true"><path pathLength="1" d="M6 80 H154"/><path pathLength="1" style="--d:0.20s" d="M44 80 V54 H112 V80"/><path pathLength="1" style="--d:0.35s" class="acc" d="M32 54 L74 32 L80 30 L124 54"/><path pathLength="1" style="--d:0.50s" d="M70 80 V64 H86 V80 M54 62 H62 M94 62 H102"/><path pathLength="1" style="--d:0.60s" d="M138 80 V58"/><circle pathLength="1" style="--d:0.65s" cx="138" cy="49" r="10"/><path pathLength="1" style="--d:0.70s" d="M20 80 V64"/><path pathLength="1" style="--d:0.75s" d="M20 46 L12 66 H28 Z"/><circle pathLength="1" style="--d:0.80s" cx="128" cy="18" r="6"/></svg>
         <p class="d3">Hotels &amp; Resorts. Places people want to return to.</p>
         <p class="g">We plan hotels and resorts around the full guest experience: room mix, F&amp;B, recreation, and events.</p>
         <ol><li><span>01</span>Villas &amp; Banquets</li><li><span>02</span>Restaurants &amp; F&amp;B</li><li><span>03</span>Recreation &amp; Safari</li><li><span>04</span>Curated Experiences</li><li><span>05</span>Facility Management</li></ol>
@@ -412,6 +445,7 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
     </div>
     <div class="panel" id="p-belong" role="tabpanel" aria-labelledby="t-belong" hidden>
       <div class="ptxt">
+        <svg class="ill pill-ill dr" viewBox="0 0 160 90" aria-hidden="true"><path pathLength="1" d="M6 80 H154"/><path pathLength="1" style="--d:0.20s" d="M12 80 V42 H54 V80 M106 80 V42 H148 V80"/><path pathLength="1" style="--d:0.30s" d="M22 52 H30 M36 52 H44 M22 64 H30 M36 64 H44 M116 52 H124 M130 52 H138 M116 64 H124 M130 64 H138"/><path pathLength="1" style="--d:0.40s" d="M80 80 V58"/><circle pathLength="1" style="--d:0.45s" cx="80" cy="47" r="12"/><path pathLength="1" style="--d:0.55s" class="acc" d="M54 44 Q80 58 106 44"/><circle class="f" style="--d:.6s;color:var(--copper)" cx="64" cy="50" r="1.6"/><circle class="f" style="--d:.6s;color:var(--copper)" cx="80" cy="52.5" r="1.6"/><circle class="f" style="--d:.6s;color:var(--copper)" cx="96" cy="50" r="1.6"/><circle pathLength="1" style="--d:0.70s" cx="66" cy="66" r="2.6"/><path pathLength="1" style="--d:0.70s" d="M66 69 V78"/><circle pathLength="1" style="--d:0.75s" cx="94" cy="66" r="2.6"/><path pathLength="1" style="--d:0.75s" d="M94 69 V78"/></svg>
         <p class="d3">Co-Living. Private enough to live. Shared enough to belong.</p>
         <p class="g">Spaces designed to create connection, enable efficient management, and deliver a better everyday experience, where every resident feels at home and part of something more.</p>
         <ol><li><span>01</span>Studios &amp; Private Rooms</li><li><span>02</span>Housekeeping &amp; Laundry</li><li><span>03</span>Workspaces, Café &amp; Gym</li><li><span>04</span>Memberships &amp; Flexible Long Stay</li><li><span>05</span>Facility Management</li></ol>
@@ -421,6 +455,7 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
     </div>
     <div class="panel" id="p-grow" role="tabpanel" aria-labelledby="t-grow" hidden>
       <div class="ptxt">
+        <svg class="ill pill-ill dr" viewBox="0 0 160 90" aria-hidden="true"><path pathLength="1" d="M6 82 H154"/><path pathLength="1" style="--d:0.20s" class="soft" d="M8 80 L52 64 M24 82 L66 66 M42 84 L80 68"/><path pathLength="1" style="--d:0.35s" d="M98 82 V60 H142 V82"/><path pathLength="1" style="--d:0.45s" class="acc" d="M92 60 L118 44 L122 42 L148 60"/><path pathLength="1" style="--d:0.55s" d="M114 82 V70 H126 V82"/><path pathLength="1" style="--d:0.60s" d="M30 58 V44"/><path pathLength="1" style="--d:0.70s" d="M30 50 q-9 -2 -11 -11 q9 0 11 9 M30 47 q9 -2 11 -11 q-9 0 -11 9"/><circle pathLength="1" style="--d:0.80s" cx="70" cy="20" r="6"/></svg>
         <p class="d3">Farm Stays. Come closer to where life begins.</p>
         <p class="g">Land as a way of living, not just cottages on a farm. Earthy luxury, farm-to-table dining, retreats and small, intimate events.</p>
         <ol><li><span>01</span>Farm-to-Table Dining</li><li><span>02</span>Events &amp; Trails</li><li><span>03</span>Vernacular Architecture</li><li><span>04</span>Curated Experiences</li><li><span>05</span>OTA Visibility &amp; Operations</li></ol>
@@ -430,6 +465,7 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
     </div>
     <div class="panel" id="p-move" role="tabpanel" aria-labelledby="t-move" hidden>
       <div class="ptxt">
+        <svg class="ill pill-ill dr" viewBox="0 0 160 90" aria-hidden="true"><path pathLength="1" d="M16 82 L46 44 H114 L144 82 Z"/><path pathLength="1" style="--d:0.25s" d="M80 44 V82" class="soft"/><path pathLength="1" style="--d:0.35s" d="M32 62 H128"/><path pathLength="1" style="--d:0.40s" d="M32 62 V52 M128 62 V52 M32 52 H128"/><path pathLength="1" style="--d:0.50s" class="acc" d="M44 30 Q80 0 116 24"/><circle pathLength="1" style="--d:0.65s" cx="118" cy="26" r="3.2"/></svg>
         <p class="d3">Sports &amp; Adventure. Not just amenities. Reasons to move.</p>
         <p class="g">Programming designed for land scale, community and pace. Built for locals, academies, corporate users, residents and guests.</p>
         <ol><li><span>01</span>Padel &amp; Pickleball</li><li><span>02</span>Tennis &amp; Badminton</li><li><span>03</span>Pilates, Gym &amp; Hyrox</li><li><span>04</span>Pools</li><li><span>05</span>Climbing &amp; Multi-sport Turfs</li></ol>
@@ -458,21 +494,21 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
     <div class="wgrid">
       <div class="settle"><picture><source type="image/webp" srcset="img/colonnade-768.webp 768w" sizes="(max-width:900px) 100vw, 40vw"><img width="768" height="472" loading="lazy" decoding="async" src="img/colonnade.jpg" alt="A sunlit stone colonnade beside a shallow reflecting pool and trees" style="object-position:60% center"></picture></div>
       <div class="stack">
-        <div><p class="d3" style="font-size:24px">Cold + Heat</p><ul>
+        <div><div class="gh"><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" d="M10 5 V27 M4 9 L16 23 M4 23 L16 9"/><path pathLength="1" style="--d:0.30s" class="acc" d="M24 27 c-4 0 -6.5 -3 -6.5 -6.5 c0 -4.5 4.5 -6 4 -11 c3.5 2 7 6.5 7 11 c0 3.5 -2 6.5 -4.5 6.5 z"/></svg><p class="d3" style="font-size:24px">Cold + Heat</p></div><ul>
           <li><b>Whole-body cryotherapy</b></li>
           <li><b>Infrared sauna</b></li>
           <li><b>Ice plunge</b></li>
           <li><b>Contrast hydrotherapy</b></li></ul></div>
-        <div><p class="d3" style="font-size:24px">Oxygen + Energy</p><ul>
+        <div><div class="gh"><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><circle pathLength="1" cx="11" cy="20" r="6.5"/><circle pathLength="1" style="--d:0.20s" cx="21" cy="9" r="4.5"/><circle pathLength="1" style="--d:0.35s" class="acc" cx="25" cy="22" r="3"/></svg><p class="d3" style="font-size:24px">Oxygen + Energy</p></div><ul>
           <li><b>Hyperbaric oxygen</b></li>
           <li><b>IHHT oxygen therapy</b></li>
           <li><b>PEMF therapy</b></li>
           <li><b>Photobiomodulation</b></li></ul></div>
-        <div><p class="d3" style="font-size:24px">Float + Calm</p><ul>
+        <div><div class="gh"><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" d="M3 13 q4.3 -4 8.6 0 t8.6 0 t8.6 0"/><path pathLength="1" style="--d:0.25s" class="acc" d="M3 20 q4.3 -4 8.6 0 t8.6 0 t8.6 0"/><path pathLength="1" style="--d:0.40s" class="soft" d="M3 27 q4.3 -4 8.6 0 t8.6 0 t8.6 0"/></svg><p class="d3" style="font-size:24px">Float + Calm</p></div><ul>
           <li><b>Dry float therapy</b></li>
           <li><b>Breathwork studio</b></li>
           <li><b>Sleep room</b></li></ul></div>
-        <div><p class="d3" style="font-size:24px">Recovery + Restoration</p><ul>
+        <div><div class="gh"><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" d="M7 25 C 7 13 15 6 26 6 C 26 17 19 25 7 25 Z"/><path pathLength="1" style="--d:0.30s" class="acc" d="M7 25 L19 13"/></svg><p class="d3" style="font-size:24px">Recovery + Restoration</p></div><ul>
           <li><b>IV + compression lounge</b></li>
           <li><b>Massage rooms</b></li></ul></div>
       </div>
@@ -489,6 +525,32 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
       <p class="g small">First understand the land. Then shape the experience. Master plans, zoning, landscape, architecture, interiors and guest flow, planned together.</p>
       <a href="#process" class="tl">Our process <svg class="arr"><use href="#a"/></svg></a>
     </div>
+<figure class="section-ill dr" id="secIll" aria-label="Line drawing of a landscape section: land, a pavilion and people">
+  <svg class="ill" viewBox="0 0 1200 210" role="img" aria-hidden="true">
+    <path pathLength="1" style="--d:0.00s" d="M0 168 C 90 160 170 138 260 146 C 320 151 340 172 380 174 C 430 176 450 160 500 152 C 560 142 600 128 660 128 C 760 128 820 120 900 128 C 980 136 1060 156 1200 150"/>
+    <path pathLength="1" style="--d:0.15s" class="soft" d="M0 186 C 160 182 300 190 420 188 C 620 184 800 176 1200 178"/>
+    <path pathLength="1" style="--d:0.30s" class="soft" d="M0 200 C 220 198 520 202 760 198 C 960 195 1100 196 1200 196"/>
+    <path pathLength="1" style="--d:0.50s" d="M330 170 H 430 M 344 178 H 416 M 362 186 H 398"/>
+    <path pathLength="1" style="--d:0.60s" d="M70 160 V 120"/><circle pathLength="1" style="--d:0.65s" cx="70" cy="106" r="16"/>
+    <path pathLength="1" style="--d:0.70s" d="M120 152 V 122"/><path pathLength="1" style="--d:0.75s" d="M120 96 L 106 128 H 134 Z"/>
+    <path pathLength="1" style="--d:0.80s" d="M180 146 V 112"/><circle pathLength="1" style="--d:0.85s" cx="180" cy="98" r="18"/>
+    <path pathLength="1" style="--d:0.90s" d="M232 144 V 120"/><circle pathLength="1" style="--d:0.95s" cx="232" cy="110" r="11"/>
+    <path pathLength="1" style="--d:1.00s" d="M610 128 V 100 H 790 V 128"/>
+    <path pathLength="1" style="--d:1.10s" class="acc" d="M592 100 L 712 70 L 724 66 L 808 100"/>
+    <path pathLength="1" style="--d:1.20s" d="M640 128 V 106 M 680 128 V 106 M 720 128 V 106 M 760 128 V 106"/>
+    <path pathLength="1" style="--d:1.30s" d="M800 128 H 880 M 806 134 H 874"/>
+    <path pathLength="1" style="--d:1.35s" d="M560 140 C 540 150 500 156 470 158"/>
+    <circle pathLength="1" style="--d:1.50s" cx="520" cy="133" r="3.2"/><path pathLength="1" style="--d:1.50s" d="M520 137 V 151 M 520 151 L 515 160 M 520 151 L 525 160 M 514 142 L 526 142"/>
+    <circle pathLength="1" style="--d:1.60s" cx="538" cy="131" r="3.2"/><path pathLength="1" style="--d:1.60s" d="M538 135 V 149 M 538 149 L 533 158 M 538 149 L 543 158 M 532 140 L 544 140"/>
+    <path pathLength="1" style="--d:1.40s" d="M940 130 V 98"/><circle pathLength="1" style="--d:1.45s" cx="940" cy="84" r="16"/>
+    <path pathLength="1" style="--d:1.50s" d="M1000 136 V 110"/><path pathLength="1" style="--d:1.55s" d="M1000 84 L 986 116 H 1014 Z"/>
+    <path pathLength="1" style="--d:1.60s" d="M1060 146 V 116"/><circle pathLength="1" style="--d:1.65s" cx="1060" cy="102" r="17"/>
+    <path pathLength="1" style="--d:1.70s" d="M1120 150 V 124"/><circle pathLength="1" style="--d:1.75s" cx="1120" cy="112" r="12"/>
+    <circle pathLength="1" style="--d:1.80s" class="acc" cx="1010" cy="40" r="15"/>
+    <path pathLength="1" style="--d:1.90s" class="soft" d="M860 54 q7 -7 14 0 q7 -7 14 0 M 900 40 q5 -5 10 0 q5 -5 10 0"/>
+  </svg>
+  <figcaption class="labels"><span>Land</span><span>Form</span><span>Living</span></figcaption>
+</figure>
     <div class="plan-grid">
       <div class="settle"><picture><source type="image/webp" srcset="img/approach-plan-640.webp 640w, img/approach-plan-1169.webp 1169w" sizes="(max-width:900px) 100vw, 40vw"><img width="1169" height="1553" loading="lazy" decoding="async" src="img/approach-plan.jpg" alt="A master plan drawing of a resort set among trees"></picture></div>
       <ol>
@@ -517,12 +579,12 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
       <p class="g small">Project PMC from pre-construction and execution to pre-opening and handover, keeping the original vision connected at every step.</p>
     </div>
     <ol class="steps" id="steps">
-      <li><span class="top"><span class="no">01</span><span class="ln"></span></span><b>Discover</b><p>The land, the life, and what the place can become</p></li>
-      <li><span class="top"><span class="no">02</span><span class="ln"></span></span><b>Define</b><p>The philosophy, the layers, the living experience</p></li>
-      <li><span class="top"><span class="no">03</span><span class="ln"></span></span><b>Design</b><p>Spaces and systems around how people live</p></li>
-      <li><span class="top"><span class="no">04</span><span class="ln"></span></span><b>Build</b><p>Schedule, cost, quality and documentation</p></li>
-      <li><span class="top"><span class="no">05</span><span class="ln"></span></span><b>Activate</b><p>Brand partners, programming and pre-opening</p></li>
-      <li><span class="top"><span class="no">06</span><span class="ln"></span></span><b>Operate</b><p>Operate and optimise for long-term value</p></li>
+      <li><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><circle pathLength="1" cx="14" cy="14" r="8.5"/><path pathLength="1" style="--d:0.20s" d="M20.5 20.5 L27 27"/><path pathLength="1" style="--d:0.35s" class="acc" d="M9 15.5 q5 -5 10 0"/></svg><span class="top"><span class="no">01</span><span class="ln"></span></span><b>Discover</b><p>The land, the life, and what the place can become</p></li>
+      <li><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" d="M16 5 L28 11 L16 17 L4 11 Z"/><path pathLength="1" style="--d:0.20s" d="M4 16.5 L16 22.5 L28 16.5"/><path pathLength="1" style="--d:0.35s" class="acc" d="M4 22 L16 28 L28 22"/></svg><span class="top"><span class="no">02</span><span class="ln"></span></span><b>Define</b><p>The philosophy, the layers, the living experience</p></li>
+      <li><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" d="M5 27 V6 L26 27 Z"/><path pathLength="1" style="--d:0.25s" d="M10 22 V16 L16 22 Z"/><path pathLength="1" style="--d:0.40s" class="acc" d="M5 11 H8 M5 16 H8 M5 21 H8"/></svg><span class="top"><span class="no">03</span><span class="ln"></span></span><b>Design</b><p>Spaces and systems around how people live</p></li>
+      <li><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><rect pathLength="1" x="4" y="18" width="11" height="9"/><rect pathLength="1" style="--d:0.20s" x="17" y="18" width="11" height="9"/><rect pathLength="1" style="--d:0.35s" class="acc" x="10.5" y="8" width="11" height="9"/></svg><span class="top"><span class="no">04</span><span class="ln"></span></span><b>Build</b><p>Schedule, cost, quality and documentation</p></li>
+      <li><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" class="acc" d="M3 20 L16 9 L29 20"/><circle pathLength="1" style="--d:0.25s" cx="16" cy="23" r="3.5"/><path pathLength="1" style="--d:0.40s" d="M16 15 V17 M9 23 H11 M21 23 H23 M11 18 L12.5 19.5 M21 18 L19.5 19.5"/></svg><span class="top"><span class="no">05</span><span class="ln"></span></span><b>Activate</b><p>Brand partners, programming and pre-opening</p></li>
+      <li><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><path pathLength="1" d="M25 11 A10 10 0 1 0 27 17"/><path pathLength="1" style="--d:0.30s" class="acc" d="M25 4 V11 H18"/><circle pathLength="1" style="--d:0.40s" cx="16" cy="16" r="2.5"/></svg><span class="top"><span class="no">06</span><span class="ln"></span></span><b>Operate</b><p>Operate and optimise for long-term value</p></li>
     </ol>
   </div>
   <div class="pano" id="pano"><picture><source type="image/webp" srcset="img/pano-640.webp 640w, img/pano-1200.webp 1200w, img/pano-1672.webp 1672w" sizes="100vw"><img width="1672" height="414" loading="lazy" decoding="async" src="img/pano.jpg" alt="Mountains and a lake at sunrise"></picture></div>
@@ -545,7 +607,7 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
       <div><b>Align goals early</b><span class="g">Commercial and experiential targets, pre-design</span></div>
       <div><b>Tailor the partnership</b><span class="g">Mutual benefit and clarity for all stakeholders</span></div>
     </div>
-    <div class="models"><div><span>01</span>Revenue-share</div><div><span>02</span>Management</div><div><span>03</span>Franchise</div><div><span>04</span>Lease</div></div>
+    <div class="models"><div><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><circle pathLength="1" cx="16" cy="16" r="11"/><path pathLength="1" style="--d:0.30s" class="acc" d="M16 16 V5 M16 16 L25.5 21.5"/></svg><span>01</span>Revenue-share</div><div><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><circle pathLength="1" cx="10" cy="16" r="5.5"/><path pathLength="1" style="--d:0.30s" class="acc" d="M15.5 16 H28 M24 16 V20.5 M27.5 16 V19.5"/></svg><span>02</span>Management</div><div><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><rect pathLength="1" x="3" y="11" width="8" height="10"/><rect pathLength="1" style="--d:0.20s" x="12" y="11" width="8" height="10"/><rect pathLength="1" style="--d:0.35s" class="acc" x="21" y="11" width="8" height="10"/></svg><span>03</span>Franchise</div><div><svg class="ill ico dr" viewBox="0 0 32 32" aria-hidden="true"><rect pathLength="1" x="8" y="4" width="16" height="24" rx="1.5"/><path pathLength="1" style="--d:0.30s" class="acc" d="M12 11 H20 M12 15.5 H20 M12 20 H17"/></svg><span>04</span>Lease</div></div>
     <ol class="diff">
       <li><span>01</span>People-first planning</li><li><span>02</span>Experience-led design</li><li><span>03</span>Next layers of living</li><li><span>04</span>Operations integrated</li><li><span>05</span>Brand fit &amp; curation</li>
       <li><span>06</span>Flexible models</li><li><span>07</span>Ongoing involvement</li><li><span>08</span>Revenue-aware design</li><li><span>09</span>Community as core</li><li><span>10</span>End-to-end thinking</li>
@@ -598,7 +660,7 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
   </div>
 </footer>
 
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/lenis.min.js"></script>
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -607,7 +669,8 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
 
   var lenis = null;
   if(!reduce && window.Lenis){
-    lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+    lenis = new Lenis({ lerp: 0.085, smoothWheel: true, wheelMultiplier: 0.95, touchMultiplier: 1.4 });
+    document.documentElement.classList.add('lenis', 'lenis-smooth');
     (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(0);
   }
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
@@ -631,10 +694,17 @@ footer p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(
     settles.forEach(function(el){ io.observe(el); });
   } else settles.forEach(function(el){ el.classList.add('in'); });
 
+  /* line illustrations draw in when they enter view */
+  var draws = [].slice.call(document.querySelectorAll('.dr'));
+  if('IntersectionObserver' in window && !reduce){
+    var dio = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); dio.unobserve(e.target); } }); }, { rootMargin: '0px 0px -12% 0px' });
+    draws.forEach(function(el){ if(!el.closest('.panel[hidden]')) dio.observe(el); });
+  } else draws.forEach(function(el){ el.classList.add('in'); });
+
   /* ecosystems tabs */
   var tabs = [].slice.call(document.querySelectorAll('.eco'));
   function select(t, focus){
-    tabs.forEach(function(x){ var on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; var p = document.getElementById(x.getAttribute('aria-controls')); p.hidden = !on; if(on){ p.classList.remove('fade'); void p.offsetWidth; p.classList.add('fade'); p.querySelectorAll('.settle').forEach(function(s){ s.classList.add('in'); }); } });
+    tabs.forEach(function(x){ var on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; var p = document.getElementById(x.getAttribute('aria-controls')); p.hidden = !on; if(on){ p.classList.remove('fade'); void p.offsetWidth; p.classList.add('fade'); p.querySelectorAll('.settle').forEach(function(s){ s.classList.add('in'); }); var dr = p.querySelector('.dr'); if(dr){ dr.classList.remove('in'); void dr.getBoundingClientRect(); requestAnimationFrame(function(){ dr.classList.add('in'); }); } } });
     if(focus) t.focus();
   }
   tabs.forEach(function(t, i){
